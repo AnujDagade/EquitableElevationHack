@@ -1,0 +1,26 @@
+.Hero {
+    display: flex;
+    flex-direction: row;
+    outline:rgb(206, 178, 178) solid 2px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.info{
+    display: flex;
+    outline:red solid 2px;
+    
+    
+}
+
+.info-picture{
+    width: 150px;
+    min-width: 375px;
+    background-color: rgb(193, 112, 196);
+}
+
+.info-text{
+    width: 375px;
+    
+}
