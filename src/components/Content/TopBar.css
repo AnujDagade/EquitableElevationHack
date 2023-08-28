@@ -1,0 +1,33 @@
+.features li {
+    display: inline;
+    padding: auto;
+
+}
+
+.features li>a {
+    text-decoration: none;
+    color: #d53f8c;
+    font-weight: 700;
+    border: 1px solid #d53f8c;
+    border-radius: 15px;
+    padding: 8px;
+}
+
+.features li > a:hover {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, .1), 0 2px 4px -1px rgba(0, 0, 0, .06);
+
+}
+
+.features {
+    list-style: none;
+
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.TopBar {
+
+    display: flex;
+
+}
