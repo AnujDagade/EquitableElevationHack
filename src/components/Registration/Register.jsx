@@ -1,27 +1,55 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Register.css'
-
-function handleRegister(event) {
-    event.preventDefault()
-    console.log("Regiterd")
-}
+import { saveToNgo } from '../../api/localStorage'
 
 
-export default function Register() {
+
+export default function Register({who}) {
+
+    const [user, setUser] = useState({
+        name:"",
+        email:"",
+        desc:"",
+        password:""
+    })
+
+    function handleRegister(event) {
+        event.preventDefault()
+        if(who==="ngo")
+        {
+            saveToNgo(user)
+       
+        }else if(who==="victim")
+        {
+            //saveToVictim()
+        }
+        
+    }
+
+    function handleChange(event) {
+        const userInfo = {
+            ...user,
+            [event.target.name]:event.target.value
+        }
+        setUser(userInfo)
+    }
+
+
+
     return (
         <div className='form'>
             <form >
                 <label htmlFor="name">Name</label>
-                <input type="text" name="name" id='name' />
+                <input type="text" name="name" id='name' onChange={handleChange} />
 
                 <label htmlFor="desc">Description</label>
-                <textarea name="desc" id="desc" cols="30" rows="10"></textarea>
+                <textarea name="desc" id="desc" cols="30" rows="10" onChange={handleChange}></textarea>
 
                 <label htmlFor="email">Email</label>
-                <input type="email" id='email' name='email' />
+                <input type="email" id='email' name='email' onChange={handleChange}/>
 
                 <label htmlFor="password">Password</label>
-                <input type="password" id='password' name='password' />
+                <input type="password" id='password' name='password' onChange={handleChange}/>
 
                 <div className="btn">
                     <button onClick={handleRegister}>Register</button>

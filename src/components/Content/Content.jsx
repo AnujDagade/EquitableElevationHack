@@ -42,8 +42,8 @@ export default function Content() {
         <TopBar />
         <Routes>
           <Route exact path='/victims' element={<VicCards />} />
-          <Route exact path='/ngo_register' element={<Register />} />
-          <Route exact path='/victim_register' element={<Register />} />
+          <Route exact path='/ngo_register' element={<Register who="ngo"/>} />
+          <Route exact path='/victim_register' element={<Register who="victim" />} />
         </Routes>
       </Router>
 
