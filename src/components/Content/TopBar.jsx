@@ -1,14 +1,16 @@
 import React from 'react'
 import './TopBar.css'
+import {Link} from "react-router-dom";
+
 
 export default function TopBar() {
   return (
     <div className='TopBar'>
         <ul className='features'>
-            <li><a href="#">Contact NGO</a></li>
-            <li><a href="#">Victims</a></li>
-            <li><a href="#">Register NGO</a></li>
-            <li><a href="#">Register Victim</a></li>
+            <li><Link to="#">Contact NGO</Link></li>
+            <li><Link to="/victims">Victims</Link></li>
+            <li><Link to="/ngo_register">Register NGO</Link></li>
+            <li><Link to="/victim_register">Register Victim</Link></li>
         </ul>
     </div>
   )

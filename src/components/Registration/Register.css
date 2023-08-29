@@ -1,0 +1,39 @@
+.form {
+    width: 400px;
+    margin: auto;
+    padding: 30px;
+    border: 1px solid #d53f8c;
+    border-radius: 4px;
+    
+}
+
+
+
+.btn{
+    display: flex;
+}
+form{
+    
+}
+
+.form input, textarea {
+    margin-bottom: 17px;
+    width: 100%;
+}
+.form > form button{
+    background-color: transparent;
+    border: none;
+    margin: auto;
+    border-radius: 20px;
+    outline: black solid 1px;
+    padding: 10px 40px;
+   
+}
+
+.form > form button:hover{
+    color: #d53f8c;
+    outline-color: #d53f8c;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, .1), 0 2px 4px -1px rgba(0, 0, 0, .06);
+}
+
+
