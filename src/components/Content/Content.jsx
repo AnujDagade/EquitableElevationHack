@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import TopBar from './TopBar'
 import Card from './Card'
-import Data from '../../../Data'
 import './Content.css'
 import {
   BrowserRouter as Router,
