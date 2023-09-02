@@ -10,8 +10,8 @@ export default function Register({who}) {
         name:"",
         email:"",
         desc:"",
-        password:""
     })
+
 
     function handleRegister(event) {
         event.preventDefault()
@@ -24,6 +24,7 @@ export default function Register({who}) {
             saveToVictim(user)
         }
         
+        alert("Registration Successfull")
     }
 
     function handleChange(event) {
@@ -48,14 +49,15 @@ export default function Register({who}) {
                 <label htmlFor="email">Email</label>
                 <input type="email" id='email' name='email' onChange={handleChange}/>
 
-                <label htmlFor="password">Password</label>
-                <input type="password" id='password' name='password' onChange={handleChange}/>
+                {/* <label htmlFor="password">Password</label>
+                <input type="password" id='password' name='password' onChange={handleChange}/> */}
 
                 <div className="btn">
                     <button onClick={handleRegister}>Register</button>
 
                 </div>
             </form>
+           
         </div>
     )
 }

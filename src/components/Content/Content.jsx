@@ -20,7 +20,7 @@ function VicCards(props) {
 
   const [userCards , setUserCards] = useState(getInfo(Object.keys(localStorage),props.user))
 
-  
+  const emptyMsg = `Results are empty please Register as ${props.user==="victim"?"Surviver":"NGO"}`
 
     useEffect(
       () => {
@@ -41,7 +41,7 @@ function VicCards(props) {
 
   return (
     <div className="cards" >
-      {cards}
+      {cards.length==0?<div>{emptyMsg}</div>:cards}
     </div >
   )
 }
