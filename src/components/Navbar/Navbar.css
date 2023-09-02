@@ -63,3 +63,11 @@ nav button:hover {
 nav ul {
     display: inline;
 }
+
+h2{
+    color:#d74891
+}
+
+.banner{
+    word-spacing: -4px;
+}
