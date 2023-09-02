@@ -12,8 +12,8 @@ export default function Hero() {
                         <h2>Social justice</h2>
                     </div>
                     <p>
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nihil deleniti beatae, id illo cupiditate architecto ipsam obcaecati, explicabo magni corrupti facere nisi quos? Alias excepturi enim autem. Nulla, ducimus minima?
-                        Fugiat optio voluptatum qui dolorum ducimus ipsa porro. Vitae in voluptas velit adipisci minus ipsa officia itaque voluptate, est excepturi totam expedita ad incidunt, sunt ullam provident recusandae fugit commodi?
+                        This platform helps Domestic Abuse/CSA victims and NGOs to connect with each other.
+                        If you register as a victim, NGOs can contact you to help you or you can contact NGOs that are registered with us.
                     </p>
 
                 </div>
