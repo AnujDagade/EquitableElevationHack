@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './Register.css'
-import { saveToNgo } from '../../api/localStorage'
+import { saveToNgo, saveToVictim } from '../../api/localStorage'
 
 
 
@@ -21,7 +21,7 @@ export default function Register({who}) {
        
         }else if(who==="victim")
         {
-            //saveToVictim()
+            saveToVictim(user)
         }
         
     }

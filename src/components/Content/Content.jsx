@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import TopBar from './TopBar'
 import Card from './Card'
 import Data from '../../../Data'
@@ -11,17 +11,33 @@ import {
   Link
 } from "react-router-dom";
 import Register from '../Registration/Register'
+import { getInfo } from '../../api/localStorage'
+import { nanoid } from 'nanoid'
 
 
 
+function VicCards(props) {
 
-function VicCards() {
-  const cards = Data.map(
-    (card) => (<Card name={card.name}
-      desc={card.desc}
-      contact={card.contact} />)
-  )
+  const [userCards , setUserCards] = useState(getInfo(Object.keys(localStorage),props.user))
 
+  
+
+    useEffect(
+      () => {
+        setUserCards(getInfo(Object.keys(localStorage),props.user))
+      }
+    ,[props.user])
+
+      
+    const cards = userCards.map(
+      (info) => (
+        <Card 
+          name={info.name}
+          desc={info.desc}
+          contact={info.email}
+          key = {nanoid()}
+        />
+    ))
 
   return (
     <div className="cards" >
@@ -37,13 +53,14 @@ export default function Content() {
 
   return (
     <div className='content'>
-
+    
       <Router>
         <TopBar />
         <Routes>
-          <Route exact path='/victims' element={<VicCards />} />
-          <Route exact path='/ngo_register' element={<Register who="ngo"/>} />
-          <Route exact path='/victim_register' element={<Register who="victim" />} />
+          <Route  path='/victims' element={<VicCards user="victim" />} />
+          <Route  path='/ngo' element={<VicCards user="ngo" />} />
+          <Route  path='/ngo_register' element={<Register who="ngo" />} />
+          <Route  path='/victim_register' element={<Register who="victim" />} />
         </Routes>
       </Router>
 
