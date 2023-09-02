@@ -13,7 +13,10 @@ import {
 import Register from '../Registration/Register'
 import { getInfo } from '../../api/localStorage'
 import { nanoid } from 'nanoid'
-
+import Navbar from '../Navbar/Navbar'
+import Hero from '../Hero/Hero'
+import About from '../Static/About'
+import Contact from '../Static/Contact'
 
 
 function VicCards(props) {
@@ -55,12 +58,16 @@ export default function Content() {
     <div className='content'>
     
       <Router>
+        <Navbar />
         <TopBar />
         <Routes>
+          <Route  path='/' element={<Hero />} />
           <Route  path='/victims' element={<VicCards user="victim" />} />
           <Route  path='/ngo' element={<VicCards user="ngo" />} />
           <Route  path='/ngo_register' element={<Register who="ngo" />} />
           <Route  path='/victim_register' element={<Register who="victim" />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/contact' element={<Contact />} />
         </Routes>
       </Router>
 

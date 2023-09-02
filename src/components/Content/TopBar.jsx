@@ -7,10 +7,10 @@ export default function TopBar() {
   return (
     <div className='TopBar'>
         <ul className='features'>
-            <li><Link to="/ngo">Contact NGO</Link></li>
-            <li><Link to="/victims">Victims</Link></li>
-            <li><Link to="/ngo_register">Register NGO</Link></li>
-            <li><Link to="/victim_register">Register Victim</Link></li>
+            <li><Link to="/ngo">Contact NGOs</Link></li>
+            <li><Link to="/victims">contact Survivors</Link></li>
+            <li><Link to="/ngo_register">Register as NGO</Link></li>
+            <li><Link to="/victim_register">Register as Survivor</Link></li>
         </ul>
     </div>
   )

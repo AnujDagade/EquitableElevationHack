@@ -1,6 +1,8 @@
 import React from 'react'
 import './Hero.css'
 
+
+
 export default function Hero() {
     return (
         <div className='Hero'>
@@ -15,9 +17,9 @@ export default function Hero() {
                     </p>
 
                 </div>
-                <div className="info-picture">
-
-                </div>
+                {/* <div className="info-picture">
+                    <button onClick={()=> location.href = "/"}>Click to Start</button>
+                </div> */}
             </div>
         </div>
     )

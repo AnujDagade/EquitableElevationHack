@@ -1,26 +1,51 @@
 .Hero {
     display: flex;
     flex-direction: row;
-    outline:rgb(206, 178, 178) solid 2px;
+    /* outline:rgb(206, 178, 178) solid 2px; */
     justify-content: center;
     align-items: center;
-    margin-top: 40px;
+    margin-top: 90px;
+    
 }
 
 .info{
     display: flex;
-    outline:red solid 2px;
-    
+    /* outline:red solid 2px; */
+    /* background-color: rgb(193, 112, 196); */
     
 }
 
 .info-picture{
     width: 150px;
     min-width: 375px;
-    background-color: rgb(193, 112, 196);
+    /* background-color: rgb(193, 112, 196); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .info-text{
     width: 375px;
-    
+    /* color: white; */
+}
+
+.info-picture > button {
+    margin-left: 25px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border: none;
+    border-radius: 20px;
+    outline: black solid 1px;
+    background-color: transparent;
+    font-size: 1.125rem;;
+    color: rgba(45, 55, 72, 1);
+    cursor: pointer;
+}
+
+.info-picture > button:hover {
+    color: #d53f8c;
+    outline-color: #d53f8c;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, .1), 0 2px 4px -1px rgba(0, 0, 0, .06);
 }
