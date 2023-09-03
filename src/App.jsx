@@ -6,7 +6,7 @@ import Content from './components/Content/Content'
 
 
 function App() {
-  document.title = "HopeAfterHurt"
+  
 
   if (navigator.userAgent.match(/Android/i)
     || navigator.userAgent.match(/webOS/i) ||

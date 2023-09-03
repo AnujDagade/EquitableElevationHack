@@ -6,6 +6,7 @@ import { saveToNgo, saveToVictim } from '../../api/localStorage'
 
 export default function Register({who}) {
 
+
     const [user, setUser] = useState({
         name:"",
         email:"",
