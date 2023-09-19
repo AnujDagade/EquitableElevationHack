@@ -71,3 +71,11 @@ h2{
 .banner{
     word-spacing: -4px;
 }
+
+
+@media (max-width:600px) {
+    .navbar ul li{
+        padding-left: 15px;
+    }
+    
+}

@@ -12,9 +12,7 @@
 .btn{
     display: flex;
 }
-form{
-    
-}
+
 
 .form input, textarea {
     margin-bottom: 17px;
@@ -37,3 +35,8 @@ form{
 }
 
 
+@media (max-width:600px){
+    .form{
+        width: 300px;
+    }
+}

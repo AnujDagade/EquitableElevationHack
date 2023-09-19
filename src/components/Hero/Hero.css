@@ -24,8 +24,14 @@
     align-items: center;
 }
 
+.hero-title{
+    display: flex;
+    justify-content: center;
+}
+
 .info-text{
     width: 385px;
+    
     /* color: white; */
 }
 
@@ -52,4 +58,10 @@
 
 .info-text p{
     word-spacing: 3px;
+}
+
+@media (max-width:600px){
+    .info-text{
+        width: 320px;
+    }
 }

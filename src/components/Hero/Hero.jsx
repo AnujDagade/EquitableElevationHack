@@ -8,7 +8,7 @@ export default function Hero() {
         <div className='Hero'>
             <div className='info' >
                 <div className='info-text'>
-                    <div>
+                    <div className='hero-title'>
                         <h2>Social justice</h2>
                     </div>
                     <p>
