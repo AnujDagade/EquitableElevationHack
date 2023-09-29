@@ -1,37 +1,44 @@
 import React, { useState } from 'react'
 import './Register.css'
-import { saveToNgo, saveToVictim } from '../../api/localStorage'
+import { saveToNgo, saveToVictim } from '../../api/localStorage.js'
 
 
 
-export default function Register({who}) {
-
+export default function Register({ who }) {
+    //initDB()
 
     const [user, setUser] = useState({
-        name:"",
-        email:"",
-        desc:"",
+        name: "",
+        email: "",
+        desc: "",
     })
 
 
-    function handleRegister(event) {
+    async function handleRegister(event) {
         event.preventDefault()
-        if(who==="ngo")
-        {
+        if (who === "ngo") {
             saveToNgo(user)
-       
-        }else if(who==="victim")
-        {
-            saveToVictim(user)
+            const res = await fetch("https://8888-anujdagade-equitableele-s09jf8798fp.ws-us105.gitpod.io/.netlify/functions/savengo/savengo", {
+                method: "POST",
+                body: JSON.stringify(user),
+                headers: {
+                    "Content-type": "application/json; charset=UTF-8"
+                }
+            })
+            const result = await res.json()
+            console.log(result.info)
+
+        } else if (who === "victim") {
+            //saveToVictim(user)
         }
-        
+
         alert("Registration Successfull")
     }
 
     function handleChange(event) {
         const userInfo = {
             ...user,
-            [event.target.name]:event.target.value
+            [event.target.name]: event.target.value
         }
         setUser(userInfo)
     }
@@ -48,7 +55,7 @@ export default function Register({who}) {
                 <textarea name="desc" id="desc" cols="30" rows="10" onChange={handleChange}></textarea>
 
                 <label htmlFor="email">Email</label>
-                <input type="email" id='email' name='email' onChange={handleChange}/>
+                <input type="email" id='email' name='email' onChange={handleChange} />
 
                 {/* <label htmlFor="password">Password</label>
                 <input type="password" id='password' name='password' onChange={handleChange}/> */}
@@ -58,7 +65,7 @@ export default function Register({who}) {
 
                 </div>
             </form>
-           
+
         </div>
     )
 }

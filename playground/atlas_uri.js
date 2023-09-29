@@ -1,0 +1,1 @@
+export const uri = "mongodb+srv://hope:hope@hope.sigli8u.mongodb.net/?retryWrites=true&w=majority"
