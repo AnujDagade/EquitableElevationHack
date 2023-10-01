@@ -5,7 +5,7 @@ const handler = async (event) => {
 
   let client = null
   function initDB() {
-    const URI = "mongodb+srv://hope:hope@hope.sigli8u.mongodb.net/?retryWrites=true&w=majority"
+    const URI = process.env.VITE_APP_MONGO_DB_CONNECTIONSTRING
     
     client = new MongoClient(
       URI

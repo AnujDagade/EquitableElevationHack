@@ -3,7 +3,7 @@ import { MongoClient } from "mongodb"
 const handler = async (event) => {
   let users = []
   
-    const URI = "mongodb+srv://hope:hope@hope.sigli8u.mongodb.net/?retryWrites=true&w=majority"
+  const URI = process.env.VITE_APP_MONGO_DB_CONNECTIONSTRING
 
     const client = new MongoClient(
       URI
@@ -17,7 +17,7 @@ const handler = async (event) => {
       const result = victims.find()
       for await (doc of result) {
         users.push(doc)
-        console.log(users);
+       // console.log(users);
       }
     } catch (error) {
       console.error(error)
@@ -29,7 +29,7 @@ const handler = async (event) => {
 
   try {
     
-    console.log(users);
+   // console.log(users);
     return {
       statusCode: 200,
       body: JSON.stringify(

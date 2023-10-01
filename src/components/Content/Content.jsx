@@ -21,34 +21,9 @@ import Contact from '../Static/Contact'
 function VicCards(props) {
  
   
-  // const [userCards , setUserCards] = useState([{_id:1,name:"placeholder",email:null,desc:null}])
   const emptyMsg = `Results are empty please Register as ${props.user==="victim"?"Surviver":"NGO"}`
 
-    // useEffect(
-    //   () =>{
-        
-    //     fetch("https://8888-anujdagade-equitableele-s09jf8798fp.ws-us105.gitpod.io/.netlify/functions/getNgo/getNgo", {
-    //         method: "GET",
-    //         headers: {
-    //             "Content-type": "application/json; charset=UTF-8"
-    //         }
-    //     }).then(res => res.json()).then(data => setUserCards(data))
-       
-    //   }
-    // ,[props.user])
 
-    // useEffect(
-    //   () =>{
-    //     console.log("In effect")
-    //     fetch("https://8888-anujdagade-equitableele-s09jf8798fp.ws-us105.gitpod.io/.netlify/functions/getNgo/getNgo", {
-    //         method: "GET",
-    //         headers: {
-    //             "Content-type": "application/json; charset=UTF-8"
-    //         }
-    //     }).then(res => res.json()).then(data => setTimeout(()=> {setUserCards(data)},500))
-        
-    //   }
-    // ,[])
     const cards = props.userCards.map(
       (info) => (
         <Card 
@@ -96,7 +71,6 @@ export default function Content() {
 
   return (
     <div className='content'>
-    
       <Router>
         <Navbar />
         <TopBar />
