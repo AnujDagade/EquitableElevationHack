@@ -17,7 +17,7 @@ export default function Register({ who }) {
     async function handleRegister(event) {
         event.preventDefault()
         if (who === "ngo") {
-            saveToNgo(user)
+            //saveToNgo(user)
             const res = await fetch("https://8888-anujdagade-equitableele-s09jf8798fp.ws-us105.gitpod.io/.netlify/functions/savengo/savengo", {
                 method: "POST",
                 body: JSON.stringify(user),
@@ -30,6 +30,17 @@ export default function Register({ who }) {
 
         } else if (who === "victim") {
             //saveToVictim(user)
+            const res = await fetch("https://8888-anujdagade-equitableele-s09jf8798fp.ws-us105.gitpod.io/.netlify/functions/savevictim/savevictim",
+            {
+                method: "POST",
+                body: JSON.stringify(user),
+                headers: {
+                    "Content-type": "application/json; charset=UTF-8"
+                }
+            })
+
+            const result = await res.json()
+            console.log(result.info);
         }
 
         alert("Registration Successfull")

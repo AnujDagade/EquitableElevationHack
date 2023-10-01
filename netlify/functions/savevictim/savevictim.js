@@ -3,11 +3,12 @@ import { MongoClient } from "mongodb";
 
 const handler = async (event) => {
 
-  let client = null
+  console.log(import.meta.env);
+
   function initDB() {
     const URI = "mongodb+srv://hope:hope@hope.sigli8u.mongodb.net/?retryWrites=true&w=majority"
-    
-    client = new MongoClient(
+
+    const client = new MongoClient(
       URI
     )
     let conn = null
@@ -25,14 +26,14 @@ const handler = async (event) => {
 
 
 
-  async function saveToNgo(ngoInfo) {
+  async function saveToVictim(ngoInfo) {
     const conn = initDB()
     let result = null
-    const ngo = conn.collection("NGO")
+    const victim = conn.collection("victims")
 
     try {
 
-      result = await ngo.insertOne(ngoInfo)
+      result = await victim.insertOne(ngoInfo)
 
       // for await (const doc of result) {
       //     console.log(doc);
@@ -44,25 +45,19 @@ const handler = async (event) => {
   }
 
 
-
-
-
-
   try {
+  
     const data = JSON.parse(event.body)
-    saveToNgo(data)
+    saveToVictim(data)
+
     return {
       statusCode: 200,
       body: JSON.stringify({info:data}),
-      // // more keys you can return:
-      // headers: { "headerName": "headerValue", ... },
-      // isBase64Encoded: true,
     }
   } catch (error) {
     return { statusCode: 500, body: error.toString() }
-  } finally{
-    client.close()
   }
 }
 
-export { handler }
+
+export  { handler }
