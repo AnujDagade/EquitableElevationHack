@@ -2,34 +2,34 @@
 import { MongoClient } from "mongodb"
 const handler = async (event) => {
   let users = []
-  
+
   const URI = process.env.VITE_APP_MONGO_DB_CONNECTIONSTRING
-
-    const client = new MongoClient(
-      URI
-    )
-    let conn = null
-
-    try {
-      client.connect()
-      conn = client.db("Hope")
-      const victims = conn.collection("victims")
-      const result = victims.find()
-      for await (doc of result) {
-        users.push(doc)
-       // console.log(users);
-      }
-    } catch (error) {
-      console.error(error)
-    }
-    finally{
-      client.close()
-    }
-   
+  console.warn(URI)
+  const client = new MongoClient(
+    URI
+  )
+  let conn = null
 
   try {
-    
-   // console.log(users);
+    client.connect()
+    conn = client.db("Hope")
+    const victims = conn.collection("victims")
+    const result = victims.find()
+    for await (doc of result) {
+      users.push(doc)
+      // console.log(users);
+    }
+  } catch (error) {
+    console.error(error)
+  }
+  finally {
+    client.close()
+  }
+
+
+  try {
+
+    // console.log(users);
     return {
       statusCode: 200,
       body: JSON.stringify(

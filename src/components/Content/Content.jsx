@@ -50,14 +50,14 @@ export default function Content() {
   useEffect(
     () =>{
       console.log("In effect")
-      fetch("https://8888-anujdagade-equitableele-s09jf8798fp.ws-us105.gitpod.io/.netlify/functions/getVictim/getVictim", {
+      fetch("https://gethope.netlify.app/.netlify/functions/getVictim/getVictim", {
           method: "GET",
           headers: {
               "Content-type": "application/json; charset=UTF-8"
           }
       }).then(res => res.json()).then(data => setTimeout(()=> {setUserCardsVictims(data)},500))
 
-      fetch("https://8888-anujdagade-equitableele-s09jf8798fp.ws-us105.gitpod.io/.netlify/functions/getNgo/getNgo", {
+      fetch("https://gethope.netlify.app/.netlify/functions/getNgo/getNgo", {
           method: "GET",
           headers: {
               "Content-type": "application/json; charset=UTF-8"
