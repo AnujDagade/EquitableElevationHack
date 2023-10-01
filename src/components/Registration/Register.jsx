@@ -45,9 +45,10 @@ export default function Register({ who }) {
         }
 
         alert("Registration Successfull")
-        setRegisterd((prevRegistered) => !prevRegistered)
+        //setRegisterd((prevRegistered) => !prevRegistered)
         setTimeout(() => {
-            setRegisterd((prevRegistered) => !prevRegistered)
+            //setRegisterd((prevRegistered) => !prevRegistered)
+            window.location.href = "https://gethope.netlify.app/";
         }, 6000)
     }
 
