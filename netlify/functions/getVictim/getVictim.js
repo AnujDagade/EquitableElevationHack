@@ -4,7 +4,7 @@ const handler = async (event) => {
   let users = []
 
   const URI = process.env.VITE_APP_MONGO_DB_CONNECTIONSTRING
-  console.warn(URI)
+  
   const client = new MongoClient(
     URI
   )
