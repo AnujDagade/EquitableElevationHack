@@ -6,7 +6,7 @@ const handler = async (event) => {
   let client = null
   let result = null
 
-  const URI = "mongodb+srv://hope:hope@hope.sigli8u.mongodb.net/?retryWrites=true&w=majority" //process.env.VITE_APP_MONGO_DB_CONNECTIONSTRING
+  const URI = process.env.VITE_APP_MONGO_DB_CONNECTIONSTRING
 
   client = new MongoClient(
     URI
@@ -37,6 +37,9 @@ const handler = async (event) => {
       // // more keys you can return:
       // headers: { "headerName": "headerValue", ... },
       // isBase64Encoded: true,
+      headers:{
+        Location:"https://gethope.netlify.app/"
+      }
     }
   } catch (error) {
     return { statusCode: 500, body: error.toString() }

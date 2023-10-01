@@ -3,59 +3,40 @@ import { MongoClient } from "mongodb";
 
 const handler = async (event) => {
 
-  console.log(import.meta.env);
 
-  function initDB() {
+  
     const URI = process.env.VITE_APP_MONGO_DB_CONNECTIONSTRING
 
     const client = new MongoClient(
       URI
     )
     let conn = null
-
+    let result = null
     try {
+      const data = JSON.parse(event.body)
       client.connect()
       conn = client.db("Hope")
+      const victim = conn.collection("victims")
+      result = await victim.insertOne(data)
     } catch (error) {
       console.error(error)
     }
-    finally {
-      return conn
-    }
-  }
-
-
-
-  async function saveToVictim(ngoInfo) {
-    const conn = initDB()
-    let result = null
-    const victim = conn.collection("victims")
-
-    try {
-
-      result = await victim.insertOne(ngoInfo)
-
-      // for await (const doc of result) {
-      //     console.log(doc);
-      // }
-    } catch (error) {
-      console.log(error)
-    }
-   
-  }
-
+    
 
   try {
   
-    const data = JSON.parse(event.body)
-    saveToVictim(data)
-
     return {
       statusCode: 200,
-      body: JSON.stringify({info:data}),
+      body: JSON.stringify({info:result}),
+      headers:{
+        Location:"https://gethope.netlify.app/"
+      }
     }
   } catch (error) {
     return { statusCode: 500, body: error.toString() }
+  }
+  finally{
+    client.close()
   }
 }
 
